@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 const { addUser, findUserByUsername } = require('../config/userDatabase');
+=======
+<<<<<<< HEAD
+const { addUser, findUserByUsername } = require('../config/userDatabase');
+=======
+const { addUser, findUserByUsername } = require('../database/userDatabase');
+>>>>>>> origin/master
+>>>>>>> origin/master
 const { generateToken } = require('../utils/authUtils');
 
 const signup = (req, res) => {
