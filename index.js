@@ -1,10 +1,16 @@
 const express = require('express');
-const app = express();
+const dotenv = require('dotenv');
 const productRoutes = require('./src/routes/product.routes'); 
+const authRoutes = require('./src/routes/auth.routes');
 const errorHandler = require('./src/middleware/errorHandler');
 
+dotenv.config();
+
+const app = express();
 app.use(express.json());
-app.use('/api', productRoutes);
+
+app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes);
 
 app.use(errorHandler);
 
