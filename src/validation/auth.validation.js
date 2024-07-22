@@ -12,4 +12,8 @@ const loginSchema = Joi.object({
     password: Joi.string().required(),
 });
 
+<<<<<<< HEAD
 module.exports = { signupSchema, loginSchema };
+=======
+module.exports = { signupSchema, loginSchema };
+>>>>>>> origin/main
