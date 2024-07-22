@@ -2,11 +2,14 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const { createValidator } = require('express-joi-validation');
+const { signupSchema, loginSchema } = require('../validation/auth.validation');
+const validator = createValidator({});
 require('dotenv').config();
 
 const router = express.Router();
 
-router.post('/register', async (req, res) => {
+router.post('/register', validator.body(signupSchema), async (req, res) => {
   const { username, password, firstname, lastname } = req.body;
 
   try {
@@ -30,7 +33,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', validator.body(loginSchema), async (req, res) => {
   const { username, password } = req.body;
 
   try {

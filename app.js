@@ -2,6 +2,9 @@ const express = require('express');
 const connectDB = require('./config/userDatabase');
 const authRoutes = require('./routes/auth');
 const protectedRoute = require('./routes/protectedRoute');
+const path = require('path');
+const userDatabase = require('./src/config/userDatabase');
+
 require('dotenv').config();
 
 const app = express();
